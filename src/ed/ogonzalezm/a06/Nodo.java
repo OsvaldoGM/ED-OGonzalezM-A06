@@ -10,17 +10,11 @@ package ed.ogonzalezm.a06;
  * @author HONORIO ZAIBACK
  */
 public class Nodo {
-    int cargo; 
+    int data; 
     Nodo next; 
 
-    void Node () { 
-        cargo = 0; 
-        next = null; 
-    } 
-
-    void Node (int cargo, Nodo next) { 
-        this.cargo = cargo; 
-        this.next = next; 
+    Nodo (int d) { 
+        this.data = d;
+        this.next = null;
     } 
 } 
-
