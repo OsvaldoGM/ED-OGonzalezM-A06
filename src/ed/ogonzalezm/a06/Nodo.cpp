@@ -1,7 +1,6 @@
 #include "Nodo.h"
 
-nodo::nodo(int v, nodo* sig) {
-	valor = v;
-	siguiente = sig;
-
+nodo::nodo(int d) {
+	data = d;
+	next = nullptr;
 }
