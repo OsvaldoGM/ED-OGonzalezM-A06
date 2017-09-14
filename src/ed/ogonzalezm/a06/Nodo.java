@@ -9,11 +9,11 @@ package ed.ogonzalezm.a06;
  *
  * @author HONORIO ZAIBACK
  */
-public class Nodo {
-    int data; 
+public class Nodo <T> {
+    T data; 
     Nodo next; 
 
-    Nodo (int d) { 
+    Nodo (T d) { 
         this.data = d;
         this.next = null;
     } 
