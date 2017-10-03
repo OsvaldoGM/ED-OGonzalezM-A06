@@ -13,11 +13,13 @@ public class Lista <T> {
     Nodo first;
     Nodo last;
     Nodo pointer;
+    int length;
      
     Lista(){
         first = null;
         last = null;
         pointer =null;
+        length = 0;
     }
      
     Lista(T data){
@@ -25,6 +27,7 @@ public class Lista <T> {
        first = node;
        last = node;
        node.next = null;
+       length++;
     }
     
     public boolean isEmpty(){
@@ -41,6 +44,7 @@ public class Lista <T> {
             node.next = first;
             first = node;
         }
+        length++;
     }
     
     public void insertLast(T n){
@@ -53,6 +57,7 @@ public class Lista <T> {
             last.next = node;
             last = node;
         }
+        length++;
     }
     
     public void deleteFirst(){
@@ -62,7 +67,7 @@ public class Lista <T> {
                 last=null;
             }else{//Si la lista tiene mas elemntos
                 first = first.next;
-            }
+            }length--;
         }
         System.out.println("Esta vacio el nodo krnalito :'v");
     }
@@ -80,6 +85,7 @@ public class Lista <T> {
                 last.next = pointer = null;
             }
         }
+        length--;
     }
     
     public boolean deleteNode(T n){
@@ -87,11 +93,15 @@ public class Lista <T> {
         if(p!=null){
             if(p.data == n){
                 deleteFirst();
-                return true;
+                length--;
+            /*}else if(last.data==n){
+                deleteLast();
+                length--;*/
             }else{
                 p.next = p.next.next;
-                return true;
+                length--;
             }
+            return true;
         } return false;
     }
     
@@ -107,6 +117,8 @@ public class Lista <T> {
             }else{
                 if(first.data==n){
                     return first;
+                /*}else if(last.data ==  n){
+                    return last;*/
                 }else{
                     pointer = first;
                     while(pointer.next!=last){
@@ -133,5 +145,15 @@ public class Lista <T> {
                 }
             }
         }return null;
+    }
+    
+    public void showList(){
+        pointer = first;
+        System.out.print("first --> ");
+        for (int i=0; i<length; i++){
+            System.out.print("[ " +pointer.data.toString() +" ]");
+            pointer = pointer.next;
+        }
+        System.out.println("<-- last" );
     }
 }
