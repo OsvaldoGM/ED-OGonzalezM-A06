@@ -11,7 +11,7 @@ package ed.ogonzalezm.a06;
  */
 public class Nodo <T> {
     T data; 
-    Nodo next; 
+    Nodo<T> next; 
 
     Nodo (T d) { 
         this.data = d;
